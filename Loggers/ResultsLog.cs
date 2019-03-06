@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using BrainVR.UnityFramework.Experiment.Helpers;
+using BrainVR.Logger.Helpers;
 using Newtonsoft.Json;
 
 namespace BrainVR.Logger
@@ -101,7 +101,6 @@ namespace BrainVR.Logger
             return SumBool(bools, finishedIndices);
         }
         #endregion    }
-
     }
     // Allows list interation and searching for inidces of a certain value
     public static class EM
