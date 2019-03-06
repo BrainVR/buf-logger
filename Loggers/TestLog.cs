@@ -39,7 +39,7 @@ namespace BrainVR.Logger
         private void WriteTestHeader()
         {
             Log.WriteLine("***TEST HEADER***");
-            Log.WriteLine(_experiment.ExperimentHeaderLog());
+            Log.WriteLine(_experiment.TestLogHeader);
             Log.WriteLine("---TEST HEADER---");
             Log.WriteLine(TestLogHeaderLine());
         }

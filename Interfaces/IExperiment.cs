@@ -34,12 +34,12 @@ namespace BrainVR.Logger.Interfaces
         string Name { get; }
         int TrialNumber { get; }
         int ExperimentNumber { get; }
+        string TestLogHeader { get; }
 
         event EventHandler<ExperimentStateArgs> ExperimentStateChanged;
         event EventHandler<ExperimentEventArgs> ExpeirmentEventSent;
         event EventHandler<TrialStateArgs> TrialStateChanged;
         event EventHandler<TrialEventArgs> TrialEventSent;
         event EventHandler<ExperimentMessageArgs> MessageSent;
-        string ExperimentHeaderLog();
     }
 }

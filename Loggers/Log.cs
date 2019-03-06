@@ -26,29 +26,20 @@ namespace BrainVR.Logger
         readonly StreamWriter _logFile;
 
         public string FilePath;
-
         public string DateString;
+        private const string RelativePath = "/../logs/";
 
-        const string RELATIVE_PATH = "/../logs/";
-
-        /// <summary>
-        /// polymorph for init with timepstmp provided by master log 
-        /// </summary>
-        /// <param name="id">ParticipantId of the participant</param>
-        /// <param name="logName">name of the log file, e.g. Player/experiment etc.</param>
-        /// <param name="Timestamp">timestamp provided by master log</param>
         public Log(string id, string logName, string timeStamp = null)
         {
             if (timeStamp == null)
             {
-                DateTime dateTime = DateTime.Now;
+                var dateTime = DateTime.Now;
                 timeStamp = dateTime.ToString("HH-mm-ss-dd-MM-yyy");
             }
             DateString = timeStamp;
             // path + id/day-month-year
-            string folderName = id + "_" + DateTime.Now.ToString("dd-MM-yyy") + "/";
-
-            FilePath = Application.dataPath + RELATIVE_PATH + folderName;
+            var folderName = id + "_" + DateTime.Now.ToString("dd-MM-yyy") + "/";
+            FilePath = Application.dataPath + RelativePath + folderName;
             //creates a folder for the patient, if it doesnt exist
             Directory.CreateDirectory(FilePath);
             //vytvoři logfile - poslední parametr určuje, zda v případě existejnce souboru bude pokračovat v zápisu (true), či jej smaže (false);
@@ -59,7 +50,7 @@ namespace BrainVR.Logger
         //simple header file for each new star of the experiment
         private void WriteHeader(string id)
         {
-            Header header = new Header(id, DateString);
+            var header = new Header(id, DateString);
             _logFile.WriteLine("***SESSION HEADER***");
             _logFile.WriteLine(JsonConvert.SerializeObject(header, Formatting.Indented));
             _logFile.WriteLine("---SESSION HEADER---");
