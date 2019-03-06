@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using BrainVR.UnityFramework.Helpers;
+using BrainVR.Logger.Helpers;
 using UnityEngine;
 //important namespaces
 
@@ -54,10 +54,10 @@ namespace BrainVR.Logger
         }
         //helper to fill blank spaces in logs so that each line has the same number of separators
         //takes int as an input and creates a blank list of that many empty spaces
-        protected List<String> WriteBlank(int num)
+        protected List<string> WriteBlank(int num)
         {
-            List<String> ls = new List<String>();
-            for (int i = 0; i < num; i++) ls.Add("");
+            var ls = new List<string>();
+            for (var i = 0; i < num; i++) ls.Add("");
             return ls;
         }
         #endregion
