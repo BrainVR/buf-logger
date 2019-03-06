@@ -5,7 +5,6 @@ namespace BrainVR.Logger
     public class ExperimentInfoLog : MonoLog
     {
         private Log _log;
-        private IExperimentInfo _info;
 
         //default instantiates without the player ID
         protected string LogName = "ExperimentInfo";
