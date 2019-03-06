@@ -7,11 +7,6 @@ namespace BrainVR.Logger
     public class TestLog : MonoLog
     {
         private IExperiment _experiment;
-
-        public override void Instantiate(string str)
-        {
-            throw new System.NotImplementedException();
-        }
         public static TestLog StartNewTest(IExperiment experiment)
         {
             //instantiates empty game objects

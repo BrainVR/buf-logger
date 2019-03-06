@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace BrainVR.Logger.Interfaces
 {
     public interface IPlayerController
     {
-        string HeaderLine();
-        List<string>  PlayerInformation();
+        string HeaderLine { get; }
+        IInput Input { get; }
+        GameObject GameObject { get; }
+        List<string> PlayerInformation();
     }
 }

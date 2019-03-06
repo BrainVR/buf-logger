@@ -24,7 +24,6 @@ namespace BrainVR.Logger
             Close();
         }
         #endregion
-        public abstract void Instantiate(string str);
         public virtual void Close()
         {
             if (Log != null) Log.Close();
